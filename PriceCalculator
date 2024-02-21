@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class PriceCalculator {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter item price: ");
+        double price = s.nextDouble();
+        System.out.print("Enter discount (if none, enter 0): ");
+        double discount = s.nextDouble();
+        
+        System.out.print("Is the item on sale? (true/false): ");
+        boolean isOnSale = s.nextBoolean();
+
+        double finalPrice;
+        if (isOnSale) {
+            finalPrice = price - (price * (discount / 100));
+        } else {
+            finalPrice = price;
+        }
+
+        System.out.println("Final price after discount: $" + finalPrice);
+        System.out.println("Have a good day");
+        
+        s.close();
+    }
+}
