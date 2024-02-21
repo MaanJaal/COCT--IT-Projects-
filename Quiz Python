@@ -1,0 +1,23 @@
+def ask_question(question, correct_answer):
+    while True:
+        answer = input(question + "\nYour answer (A/B/C/D): ").strip().upper()
+        if answer == correct_answer:
+            print("Correct!")
+            return 1
+        else:
+            print(f"Incorrect! Try again.")
+
+def main():
+    print("Welcome to the Quiz Game!")
+    print("Answer the following question:")
+
+    score = 0
+
+    # Question 1
+    score += ask_question("What is the capital of South Africa?\nA) Cape Town\nB) Bloemfontein\nC) Pretoria\nD) All the Above", "D")
+
+    print("\nQuiz complete!")
+    print(f"Your total score is: {score} out of 1.")
+
+if __name__ == "__main__":
+    main()
