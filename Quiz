@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class QuizGame {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Quiz Game!");
+        System.out.println("Answer the following question:");
+
+        int score = 0;
+
+        // Question 1
+        score += askQuestion("What is the capital of South Africa?\nA) Cape Town\nB) Bloemfontein\nC) Pretoria\nD) All the Above\nYour answer (A/B/C/D): ", "D", scanner);
+
+        System.out.println("\nQuiz complete!");
+        System.out.println("Your total score is: " + score + " out of 1.");
+
+        scanner.close();
+    }
+
+    public static int askQuestion(String question, String correctAnswer, Scanner scanner) {
+        System.out.println(question);
+        String answer = scanner.nextLine();
+        if (answer.equalsIgnoreCase(correctAnswer)) {
+            System.out.println("Correct!");
+            return 1;
+        } else {
+            System.out.println("Incorrect! The correct answer is " + correctAnswer + ".");
+            return 0;
+        }
+    }
+}
