@@ -1,0 +1,23 @@
+import random
+
+def roll_die(num_faces=6):
+    return random.randint(1, num_faces)
+
+def main():
+    while True:
+        num_faces = int(input("Enter the number of faces on the die: "))
+        while True:
+            input("Press Enter to roll the die...")
+            result = roll_die(num_faces)
+            print(f"The die rolled: {result}")
+
+            play_again = input("Do you want to roll again? (yes/no): ")
+            if play_again.lower() != "yes":
+                break
+        
+        exit_program = input("Do you want to exit the program? (yes/no): ")
+        if exit_program.lower() == "yes":
+            break
+
+if __name__ == "__main__":
+    main()
